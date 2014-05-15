@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+pre, code{
+background-color:#efefef;
+}
+</style>
+<head>
+<link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=5bcec08ba0c5">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+</head>
+<div class="post-text" itemprop="description">
+
+        <p>I try to instantiate the inner class defined in the following Java code:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Mother</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Child</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> doStuff</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              </span><span class="com">// ...</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+ </span><span class="pun">}</span></code></pre>
+
+<p>When I try to get an instance of Child like this</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln"> </span><span class="typ">Class</span><span class="pun">&lt;?&gt;</span><span class="pln"> clazz</span><span class="pun">=</span><span class="pln"> </span><span class="typ">Class</span><span class="pun">.</span><span class="pln">forName</span><span class="pun">(</span><span class="str">"com.mycompany.Mother$Child"</span><span class="pun">);</span><span class="pln">
+ </span><span class="typ">Child</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> clazz</span><span class="pun">.</span><span class="pln">newInstance</span><span class="pun">();</span></code></pre>
+
+<p>I get this exception:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln"> java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">InstantiationException</span><span class="pun">:</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">mycompany</span><span class="pun">.</span><span class="typ">Mother$Child</span><span class="pln">
+    at java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">Class</span><span class="pun">.</span><span class="pln">newInstance0</span><span class="pun">(</span><span class="typ">Class</span><span class="pun">.</span><span class="pln">java</span><span class="pun">:</span><span class="lit">340</span><span class="pun">)</span><span class="pln">
+    at java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">Class</span><span class="pun">.</span><span class="pln">newInstance</span><span class="pun">(</span><span class="typ">Class</span><span class="pun">.</span><span class="pln">java</span><span class="pun">:</span><span class="lit">308</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">...</span></code></pre>
+
+<p>What am I missing ?</p>
+
+    </div>
+    </html>

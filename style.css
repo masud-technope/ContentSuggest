@@ -1,0 +1,42 @@
+code,pre, textarea, blockquote {
+	font: 1em 'Courier New', Courier, Fixed, monospace;
+    font-size : 100%;
+    color: #000;
+	background-color:#F7BE81;
+    /*background : #fff url(http://www.estudiowas.com.ar/images/preback.jpg) no-repeat left top;*/
+    overflow : auto;
+    text-align:left;
+    /*border : 1px solid #5581C0;*/
+	padding : 3px;
+    margin:1em 0 1em 0;
+    font-weight:normal!important;
+	 }
+ 
+
+div, p, table
+{
+width:100%;
+padding:0px;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+padding-left:0px;
+font-size:12px;
+}
+
+.rel1
+{
+background-color:#F5D0A9;
+padding:2px;
+}
+.rel2
+{
+background-color:#F6E3CE;
+padding:2px;
+}
+.rel3
+{
+background-color:#BDBDBD;
+padding:2px;
+}

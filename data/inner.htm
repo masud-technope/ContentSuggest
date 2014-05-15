@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+pre, code{
+background-color:#efefef;
+}
+</style>
+</head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+    <script>
+    StackExchange.ready(function () {
+        //topbar.init();
+        StackExchange.topbar.init();
+    });
+</script>
+    <div class="container">
+      <div id="content">
+
+
+<div itemscope="" itemtype="http://schema.org/Article">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://stackoverflow.com/questions/17485297/java-how-to-instantiate-inner-class-with-reflection" class="question-hyperlink">Java - How to instantiate inner class with reflection?</a></h1>
+		</div>
+			<div id="mainbar">
+
+
+
+<div class="question" data-questionid="17485297" id="question">
+
+        <table>
+        <tbody><tr>
+            <td class="votecell">&nbsp;</td>
+
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="description">
+
+        <p>I try to instantiate the inner class defined in the following Java code:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln"> </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Mother</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Child</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> doStuff</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              </span><span class="com">// ...</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">}</span><span class="pln">
+ </span><span class="pun">}</span></code></pre>
+
+<p>When I try to get an instance of Child like this</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln"> </span><span class="typ">Class</span><span class="pun">&lt;?&gt;</span><span class="pln"> clazz</span><span class="pun">=</span><span class="pln"> </span><span class="typ">Class</span><span class="pun">.</span><span class="pln">forName</span><span class="pun">(</span><span class="str">"com.mycompany.Mother$Child"</span><span class="pun">);</span><span class="pln">
+ </span><span class="typ">Child</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> clazz</span><span class="pun">.</span><span class="pln">newInstance</span><span class="pun">();</span></code></pre>
+
+<p>I get this exception:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="pln"> java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">InstantiationException</span><span class="pun">:</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">mycompany</span><span class="pun">.</span><span class="typ">Mother$Child</span><span class="pln">
+    at java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">Class</span><span class="pun">.</span><span class="pln">newInstance0</span><span class="pun">(</span><span class="typ">Class</span><span class="pun">.</span><span class="pln">java</span><span class="pun">:</span><span class="lit">340</span><span class="pun">)</span><span class="pln">
+    at java</span><span class="pun">.</span><span class="pln">lang</span><span class="pun">.</span><span class="typ">Class</span><span class="pun">.</span><span class="pln">newInstance</span><span class="pun">(</span><span class="typ">Class</span><span class="pun">.</span><span class="pln">java</span><span class="pun">:</span><span class="lit">308</span><span class="pun">)</span><span class="pln">
+    </span><span class="pun">...</span></code></pre>
+
+<p>What am I missing ?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/java" class="post-tag js-gps-track" title="show questions tagged 'java'" rel="tag">java</a> <a href="http://stackoverflow.com/questions/tagged/reflection" class="post-tag js-gps-track" title="show questions tagged 'reflection'" rel="tag">reflection</a> <a href="http://stackoverflow.com/questions/tagged/instantiationexception" class="post-tag js-gps-track" title="show questions tagged 'instantiationexception'" rel="tag">instantiationexception</a>    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="post-signature owner">&nbsp;</td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17485297" class="comments" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="false">
+
+    <tr id="comment-25412424" class="comment">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Uhm, your inner class is not static... Is this on purpose? Coming from a C# background maybe? ;)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1093528/fge" title="35039 reputation" class="comment-user">fge</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment25412424_17485297"><span title="2013-07-05 09:22:10Z" class="relativetime-clean">Jul 5 '13 at 9:22</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                            </div>
+        </td>
+    </tr>
+    <tr id="comment-25413692" class="comment">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks for suggesting "static" idea! In fact, using a static nested class instead of an inner class make my life easier.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/363573/alex" title="9512 reputation" class="comment-user owner">Alex</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment25413692_17485297"><span title="2013-07-05 10:03:20Z" class="relativetime-clean">Jul 5 '13 at 10:03</span></a></span>
+                            </div>
+        </td>
+    </tr>
+    <tr id="comment-25413850" class="comment">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">The thing is, if an inner
+class is not declared static, instances of this class depend on the
+existence of an instance of the outer class; this is different from C#
+where all inner classes are "static" by default, and can be instantiated
+ without a parent instance.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1093528/fge" title="35039 reputation" class="comment-user">fge</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment25413850_17485297"><span title="2013-07-05 10:08:19Z" class="relativetime-clean">Jul 5 '13 at 10:08</span></a></span>
+                            </div>
+        </td>
+    </tr>
+			    </tbody>
+				    <tfoot>
+					    <tr>
+						    <td></td>
+						    <td class="comment-form">
+							    <form id="add-comment-17485297" class="" data-placeholdertext="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."></form>
+						    </td>
+					    </tr>
+				    </tfoot>
+		    </table>
+	    </div>
+			</td>
+</tr>                  <tr class="bounty-notification">
+          <td class="votecell"></td>
+          <td>
+          <div style="margin-top:20px"></div>
+          </td>
+          </tr>
+    </tbody></table>
+</div>
+
+
+			<div id="answers">
+			  <div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								2 Answers
+						</h2>
+						<div>
+						  <div id="tabs"></div>
+						</div>
+					</div>
+			  </div>
+
+
+
+
+
+              <div id="answer-17485341" class="answer accepted-answer" data-answerid="17485341">
+    <table>
+        <tbody><tr>
+            <td class="votecell">&nbsp;</td>
+
+
+
+<td class="answercell">
+    <div class="post-text">
+            <p>There's an extra "hidden" parameter, which is the instance of the enclosing class. You'll need to get at the constructor using <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html#getDeclaredConstructor%28java.lang.Class...%29"><code>Class.getDeclaredConstructor</code></a> and then supply an instance of the enclosing class as an argument. For example:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="com">// All exception handling omitted!</span><span class="pln">
+</span><span class="typ">Class</span><span class="pun">&lt;?&gt;</span><span class="pln"> enclosingClass </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Class</span><span class="pun">.</span><span class="pln">forName</span><span class="pun">(</span><span class="str">"com.mycompany.Mother"</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">Object</span><span class="pln"> enclosingInstance </span><span class="pun">=</span><span class="pln"> enclosingClass</span><span class="pun">.</span><span class="pln">newInstance</span><span class="pun">();</span><span class="pln">
+
+</span><span class="typ">Class</span><span class="pun">&lt;?&gt;</span><span class="pln"> innerClass </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Class</span><span class="pun">.</span><span class="pln">forName</span><span class="pun">(</span><span class="str">"com.mycompany.Mother$Child"</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">Constructor</span><span class="pun">&lt;?&gt;</span><span class="pln"> ctor </span><span class="pun">=</span><span class="pln"> innerClass</span><span class="pun">.</span><span class="pln">getDeclaredConstructor</span><span class="pun">(</span><span class="pln">enclosingClass</span><span class="pun">);</span><span class="pln">
+
+</span><span class="typ">Object</span><span class="pln"> innerInstance </span><span class="pun">=</span><span class="pln"> ctor</span><span class="pun">.</span><span class="pln">newInstance</span><span class="pun">(</span><span class="pln">enclosingInstance</span><span class="pun">);</span></code></pre>
+
+<p>EDIT: Alternatively, if the nested class doesn't actually need to refer to an enclosing instance, make it a nested <em>static</em> class instead:</p>
+
+<pre style="" class="lang-java prettyprint prettyprinted"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Mother</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+     </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Child</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+          </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> doStuff</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+              </span><span class="com">// ...</span><span class="pln">
+          </span><span class="pun">}</span><span class="pln">
+     </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="post-signature" align="right">&nbsp;</td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17485341" class="comments" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="false">
+
+    <tr id="comment-25412497" class="comment">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I believe the real problem is that OP didn't mean the class not to be static to begin with, but I may be mistaken</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1093528/fge" title="35039 reputation" class="comment-user">fge</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment25412497_17485341"><span title="2013-07-05 09:24:30Z" class="relativetime-clean">Jul 5 '13 at 9:24</span></a></span>
+                              </div>
+        </td>
+    </tr>
+    <tr id="comment-25412519" class="comment">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                <a class="comment-up comment-up-off" title="this comment adds something useful to the post">upvote</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <a class="comment-flag" title="flag this comment as unconstructive, offensive, or spam">flag</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@fge: Possibly. I'll mention that in the answer.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/22656/jon-skeet" title="661756 reputation" class="comment-user">Jon Skeet</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment25412519_17485341"><span title="2013-07-05 09:25:09Z" class="relativetime-clean">Jul 5 '13 at 9:25</span></a></span>
+                              </div>
+        </td>
+    </tr>
+			    </tbody>
+				    <tfoot>
+					    <tr>
+						    <td></td>
+						    <td class="comment-form">
+							    <form id="add-comment-17485341" class="" data-placeholdertext="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></form>
+						    </td>
+					    </tr>
+				    </tfoot>
+		    </table>
+	    </div>
+			</td>
+</tr>
+    </tbody></table>
+</div>
+
+
+<div id="answer-17485358" class="answer" data-answerid="17485358">
+    <table>
+        <tbody><tr>
+            <td class="votecell">&nbsp;</td>
+
+
+
+<td class="answercell">
+    <div class="post-text">
+            <p>When using reflection, you'll find constructors of that
+inner class taking an instance of the outer class as an additional
+argument (always the first) .</p>
+
+<p>See these questions for related information:</p>
+
+<p><a href="http://stackoverflow.com/questions/4070716/instantiating-inner-class">Instantiating inner class</a></p>
+
+<p><a href="http://stackoverflow.com/questions/10253533/how-can-i-instantiate-a-member-class-through-reflection-on-android">How can I instantiate a member class through reflection on Android</a></p>
+
+<p><a href="http://stackoverflow.com/questions/763543/in-java-how-do-i-access-the-outer-class-when-im-not-in-the-inner-class">In Java, how do I access the outer class when I'm not in the inner class?</a></p>
+
+<p>You need to jump through a few hoops to do this. First, you need to use <code>Class.getConstructor()</code> to find the Constructor object you want to invoke:</p>
+
+<blockquote>
+  <p>Returns a Constructor object that reflects the specified public
+  constructor of the class represented by this Class object. The
+  parameterTypes parameter is an array of Class objects that identify
+  the constructor's formal parameter types, in declared order. If this
+  Class object represents an inner class declared in a non-static
+  context, the formal parameter types include the explicit enclosing
+  instance as the first parameter.</p>
+</blockquote>
+
+<p>And then you use <code>Constructor.newInstance():</code></p>
+
+<blockquote>
+  <p>If the constructor's declaring class is an inner class in a non-static
+  context, the first argument to the constructor needs to be the
+  enclosing instance</p>
+</blockquote>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="post-signature" align="right">&nbsp;</td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17485358" class="comments dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="false">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+				    <tfoot>
+					    <tr>
+						    <td></td>
+						    <td class="comment-form">
+							    <form id="add-comment-17485358" class="" data-placeholdertext="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></form>
+						    </td>
+					    </tr>
+				    </tfoot>
+		    </table>
+	    </div>
+			</td>
+</tr>
+    </tbody></table>
+</div>
+									<h2 class="bottom-notice">&nbsp;</h2>
+			</div>
+		</div>
+				<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/17485297" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/17485297/ivc/2091');});
+</script>
+<noscript>
+    <div><img src="/posts/17485297/ivc/2091" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-java</div></div>
+
+
+
+        </div>
+    </div>
+    <script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('java,reflection,instantiationexception,x-user-registered,x-200plus-rep');; ados_load(); });
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+        ga('set', 'dimension1', '197130');
+        ga('set', 'dimension2', '|java|reflection|instantiationexception|');
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+
+
+
+</body></html>

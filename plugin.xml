@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Sample Category"
+            id="ca.usask.cs.srlab.contentsuggest">
+      </category>
+      <view
+            name="ContentSuggest"
+            icon="icons/suggestion16.png"
+            category="ca.usask.cs.srlab.contentsuggest"
+            class="ca.usask.cs.srlab.contentsuggest.views.ContentSuggestView"
+            id="ca.usask.cs.srlab.contentsuggest.views.ContentSuggestView">
+      </view>
+      <view
+            name="Suggestion"
+            icon="icons/sample.gif"
+            category="ca.usask.cs.srlab.contentsuggest"
+            class="ca.usask.cs.srlab.contentsuggest.views.SuggestionView"
+            id="ca.usask.cs.srlab.contentsuggest.views.SuggestionView">
+      </view>
+      <view
+            name="ContentBrowser"
+            icon="icons/browser16.png"
+            category="ca.usask.cs.srlab.contentsuggest"
+            class="ca.usask.cs.srlab.contentsuggest.views.ContentBrowserView"
+            id="ca.usask.cs.srlab.contentsuggest.views.ContentBrowserView">
+      </view>
+   </extension>
+    <extension point="org.eclipse.ui.commands">
+         <category
+               id="ca.usask.cs.srlab.contentsuggest.category"
+               description="This is a category for command"
+               name="commandcategory">
+         </category>
+         <command
+         		categoryId="ca.usask.cs.srlab.contentsuggest.category"
+         		defaultHandler="ca.usask.cs.srlab.contentsuggest.handlers.ShowContentSuggestHandler"
+         		id="ca.usask.cs.srlab.contentsuggest.ShowContentSuggest"
+         		name="Enable ContentSuggest">
+         </command>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+         <menuContribution   
+               allPopups="false"
+               locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+               <menu label="ContentSuggest" icon="icons/suggestion16.png" id="ca.usask.cs.srlab.contentsuggest.popupmenu">
+               <command commandId="ca.usask.cs.srlab.contentsuggest.ShowContentSuggest"
+                     id="ca.usask.cs.srlab.contentsuggest.ShowContentSuggestMenu"
+                     label="Enable ContentSuggest"
+                     icon="icons/enablesc16.png"
+                     style="push">
+               </command>
+            </menu>
+         </menuContribution>
+         <menuContribution 
+         locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+               <menu label="ContentSuggest" id="ca.usask.cs.srlab.contentsuggest.mainmenu">
+               <command commandId="ca.usask.cs.srlab.contentsuggest.ShowContentSuggest"
+                     id="ca.usask.cs.srlab.contentsuggest.ShowContentSuggestMenu"
+                     label="Enable ContentSuggest"
+                     icon="icons/enablesc16.png"
+                     style="push">
+               </command>
+               </menu>
+         </menuContribution> 
+   </extension>
+   
+    <extension point="org.eclipse.ui.handlers">
+      <handler 
+      commandId="ca.usask.cs.srlab.contentsuggest.ShowContentSuggest">
+      </handler>
+     </extension>
+   
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="ca.usask.cs.srlab.contentsuggest.views.SampleView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>
