@@ -33,7 +33,7 @@ public class SearchResultProvider {
 			return null;
 		 //GoogleAPI gapi=new GoogleAPI();
 		 //ArrayList<Result>
-		// googleResults=gapi.find_Google_Results(searchQuery);
+		 //googleResults=gapi.find_Google_Results(searchQuery);
 		BingAPI bapi = new BingAPI();
 		ArrayList<Result> googleResults = bapi.find_Bing_Results(searchQuery);
 		googleResults = updateRelevanceMeasures(googleResults, searchQuery);
